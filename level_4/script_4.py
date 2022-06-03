@@ -26,7 +26,8 @@ while i < 98:
                             'holdthedoor': 'submit',
                             'key': key}
 
-            s.post(url, data=data_to_send, headers=header, proxies=proxy, timeout=5)
+            s.post(url, data=data_to_send, headers=header,
+                   proxies=proxy, timeout=5)
             total = list(soup.find_all("td"))
             for j in range(len(total)):
                 if "4256" in str(total[j].text):
@@ -37,5 +38,5 @@ while i < 98:
                             break
                     else:
                         print("fail")
-        except:
+        except Exception:
             print("fail")
